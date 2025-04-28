@@ -330,9 +330,9 @@ menu "ESPDrone Config"
             int "MOTOR03_PIN GPIO number"
             range 0 34 if TARGET_ESPLANE_V1
             default 32 if TARGET_ESPLANE_V1
-            range 0 43 if TARGET_ESPLANE_V2_S2
+            range 0 48 if TARGET_ESPLANE_V2_S2
             default 5 if TARGET_ESPLANE_V2_S2
-            range 0 43 if TARGET_ESP32_S2_DRONE_V1_2
+            range 0 48 if TARGET_ESP32_S2_DRONE_V1_2
             default 3 if TARGET_ESP32_S2_DRONE_V1_2
             help
                 GPIO number (IOxx) MOTOR03_PIN
@@ -341,9 +341,9 @@ menu "ESPDrone Config"
             int "MOTOR04_PIN GPIO number"
             range 0 34 if TARGET_ESPLANE_V1
             default 25 if TARGET_ESPLANE_V1
-            range 0 43 if TARGET_ESPLANE_V2_S2
+            range 0 48 if TARGET_ESPLANE_V2_S2
             default 6 if TARGET_ESPLANE_V2_S2
-            range 0 43 if TARGET_ESP32_S2_DRONE_V1_2
+            range 0 48 if TARGET_ESP32_S2_DRONE_V1_2
             default 4 if TARGET_ESP32_S2_DRONE_V1_2
             help
                 GPIO number (IOxx) MOTOR04_PIN

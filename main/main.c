@@ -59,7 +59,7 @@ void app_main()
     
     systemLaunch();
     
-    //start_stream(); //Camera main
+    start_stream(); //Camera main
     
 
 }
