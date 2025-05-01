@@ -334,20 +334,11 @@ static void fullStateDecoder(setpoint_t *setpoint, uint8_t type, const void *dat
   setpoint->attitudeRate.pitch = millirad2deg * values->ratePitch;
   setpoint->attitudeRate.yaw = millirad2deg * values->rateYaw;
 
-  float tempQuat[4];  // Temporary array to store decompressed quaternion values
-quatdecompress(values->quat, tempQuat);
-
-// Copy decompressed quaternion values back to setpoint
-setpoint->attitudeQuaternion.q0 = tempQuat[0];
-setpoint->attitudeQuaternion.q1 = tempQuat[1];
-setpoint->attitudeQuaternion.q2 = tempQuat[2];
-setpoint->attitudeQuaternion.q3 = tempQuat[3];
-
-// Set the mode fields as before
-setpoint->mode.quat = modeAbs;
-setpoint->mode.roll = modeDisable;
-setpoint->mode.pitch = modeDisable;
-setpoint->mode.yaw = modeDisable;
+quatdecompress(values->quat, (float *)&setpoint->attitudeQuaternion);
+  setpoint->mode.quat = modeAbs;
+  setpoint->mode.roll = modeDisable;
+  setpoint->mode.pitch = modeDisable;
+  setpoint->mode.yaw = modeDisable;
 }
 
 /* positionDecoder
